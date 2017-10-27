@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   <link rel="stylesheet" href="main.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/368363b8d0.js"></script>
+  </head>
+   <body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #c0c2c4;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><span class="heading">MORE RECIPES</span></a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav pull-right">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">LOGOUT</a>
+        </li>
+    </div>
+  </nav>
+      <div>
+        <h2>
+          <span class="wel-user">
+          Welcome Username <button type="button" class="btn btn-info"><a href="formedit.html">Edit Profile</a>
+          </button>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Create Recipe
+          </button>
+
+        </span>
+      </h2>
+    </div>
+    <h2>My Recipes</h2>
+    <ul class="gallery">
+      <li>
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#review">
+           REVIEW
+          </button>
+
+          <!-- Modal -->
+<div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">REVIEWS</h4>
+      </div>
+      <div class="modal-body">
+        content goes here
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <img src="images/indianRecipe.jpg" class="img-fluid" alt="Responsive image">
+        <p class="iceCream">Title: Indian Potato Recipe<br><strong>Ingredients:</strong><br>Black Chana with Potato. Black chickpeas are simmered with potatoes onion, {turmeric, and cumin in this classic… ...
+        Tomato Cucumber Kachumbar.
+        Red Split Lentils (Masoor Dal)
+        Coconut Chutney.
+        Tamarind Sauce Fish Curry. <a href="indianRecipe.html" class="more">more...</a>
+        </p>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+            Delete
+          </button>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Edit
+          </button>
+        <a href="#">
+          <i class="fa fa-thumbs-up pull-right" aria-hidden="true"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-thumbs-down pull-right" aria-hidden="true"></i>
+        </a>
+      </li>    
+      <li>
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#review">
+           REVIEW
+          </button>
+          <img src="images/iceCream.jpg" class="img-fluid" alt="Responsive image">
+          <p class="iceCream">Title: Ice Cream Recipe<br><strong>Ingredients:</strong><br>
+          Place sweetened condensed milk in the fridge to keep cold.
+          Beat cold heavy cream on medium in a stand mixer fitted with the whisk attachment (or using a hand mixer) until stiff peaks form.
+          Turn down the speed a little and pour the condensed milk into the whipped cream.
+            <a href="iceCream.html" class="more">more...</a>
+          </p>
+         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+            Delete
+          </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Edit
+          </button>
+        <a href="#">
+          <i class="fa fa-thumbs-up pull-right" aria-hidden="true"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-thumbs-down pull-right" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+       Are you sure you want to delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">CREATE A NEW RECIPE</h4>
+      </div>
+      <div class="modal-body">
+       <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title of Recipe</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of Recipe">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Short description of Recipe</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter here">
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Ingredients and Preparation</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+          <small id="fileHelp" class="form-text text-muted">Upload File Here</small>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            I take full responsibility of the information I provide and its originality.
+          </label>
+        </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
