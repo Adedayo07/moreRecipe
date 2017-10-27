@@ -30,53 +30,53 @@ const recipes = {
 	}
 
 }
-
-
-
-
-
 				
  module.exports = (app) => {
    app.get('/api', (req, res) => res.status(200).send({
      message: 'Welcome to the moreRecipes API!',
    }));
  
+   // list all recipes
    app.get('/api/recipes', (req, res) => {
-   	if (req.query.sort === 'upvotes') {
-   		let best;
- 			Object.keys(recipes).forEach((key) => {
- 				let recipe = recipes[key]
- 				if (!best) {
- 					best = recipe
- 				}
- 				else if (recipe.upvotes > best.upvotes) {
- 					best = recipe
- 				}
- 			})
- 			return res.status(200).send({message: best})
-   	}
-   	res.status(200).send({
-     	message: recipes
-   	});
+		var recipesList = [];
+		// convert recipes object to list
+		Object.keys(recipes).forEach((key) => {
+			recipesList.push(recipes[key])
+		})
+
+		if (req.query.sort === 'upvotes') {
+			// sort recipes by ascending order of upvotes
+			recipesList.sort((a, b) => {
+				return a.upvotes - b.upvotes
+			});
+		}
+		res.status(200).send({
+			message: recipesList
+		});
  	})
- 
+
+
+    // create a recipe
  	app.post('/api/recipes', (req, res) => {
  		const recipe = req.body.recipe;
  		const content = req.body.content;
- 		recipes[recipe] = { data: content, upvotes: 0}
-   	res.status(200).send({
-     	message: ['recipe added successfully', recipes]
-   	});
+ 		recipes[recipe] = { ingredients: content, upvotes: 0}
+	   	res.status(200).send({
+	     	message: ['recipe added successfully', recipes]
+	   	});
  	})
  
+ 	// edit a recipe
  	app.put('/api/recipes/:recipeId', (req, res) => {
  		const recipeToGet = req.params.recipeId
  		const valueToUpdate = req.body.valueToUpdate
  		recipes[recipeToGet].data = valueToUpdate
-   	res.status(200).send({
-     	message: ['recipe updated successfully', recipes]
-   	});
+	   	res.status(200).send({
+	     	message: ['recipe updated successfully', recipes]
+	   	});
  	})
+
+ 	// delete a recipe
  	app.delete('/api/recipes/:recipeId', (req, res) => {
  		delete recipes[req.params.recipeId]
  		res.status(200).send({message:'recipe deleted successfully'})
