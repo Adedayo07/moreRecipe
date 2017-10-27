@@ -342,3 +342,11 @@ width: 300px;
 	width:20em;
 	height: 3em
 }
+
+.signin{
+  margin-left: -13em;
+}
+
+.favorites{
+  color: green;
+}

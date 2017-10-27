@@ -8,7 +8,7 @@ const recipes = {
 	},
 
 	'Indian-potato': {
-		'name': 'Indian-potato'
+		'name': 'Indian-potato',
 		'ingredients':["Black Chana with Potato", "turmeric", "tomato", "cucumber", "Kachumbar", "tamarind sauce fish curry"],
 		'upvotes': 28,
 		'downvotes': 6,
@@ -17,7 +17,7 @@ const recipes = {
 
 
 	'Salmon': {
-		'name': 'Salmon'
+		'name': 'Salmon',
 		'ingredients':['salmon', 'lemon juice', 'gaelic', 'melted butter', 'salt', 'pepper', 'oregano', 'red pepper flakes'],
 		'upvotes': 20,
 		'downvotes': 7,
@@ -26,7 +26,7 @@ const recipes = {
 
 
 	'Sandwich': {
-		'name': 'Sandwich'
+		'name': 'Sandwich',
 		'ingredients':['salmon', 'mayonnaise', 'celery', 'lemon zest', 'black pepper', 'lettuce leaves', 'bread'],
 		'upvotes': 31,
 		'downvotes': 8,
@@ -86,7 +86,7 @@ const recipes = {
  	// delete a recipe
  	app.delete('/api/recipes/:recipeId', (req, res) => {
  		delete recipes[req.params.recipeId]
- 		res.status(200).send({message:'recipe deleted successfully'})
+ 		res.status(200).send([{message:'recipe deleted successfully'}, recipes])
  	})
  }
 
