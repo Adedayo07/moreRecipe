@@ -1,5 +1,6 @@
 const recipes = {
 	'Ice-cream': {
+		'name': 'Ice-cream',
 		'ingredients': ['condensed milk', 'coconut', 'whipped cream'],
 		'upvotes': 35,
 		'downvote': 5,
@@ -7,7 +8,8 @@ const recipes = {
 	},
 
 	'Indian-potato': {
-	'ingredients':["Black Chana with Potato", "turmeric", "tomato", "cucumber", "Kachumbar", "tamarind sauce fish curry"],
+		'name': 'Indian-potato'
+		'ingredients':["Black Chana with Potato", "turmeric", "tomato", "cucumber", "Kachumbar", "tamarind sauce fish curry"],
 		'upvotes': 28,
 		'downvotes': 6,
 		'preparation':"Black Chana with Potato. , {turmeric, and cumin in this classic, Tomato Cucumber Kachumbar, Red Split Lentils (Masoor Dal), coconut Chutney, Tamarind Sauce Fish Curry"
@@ -15,6 +17,7 @@ const recipes = {
 
 
 	'Salmon': {
+		'name': 'Salmon'
 		'ingredients':['salmon', 'lemon juice', 'gaelic', 'melted butter', 'salt', 'pepper', 'oregano', 'red pepper flakes'],
 		'upvotes': 20,
 		'downvotes': 7,
@@ -23,6 +26,7 @@ const recipes = {
 
 
 	'Sandwich': {
+		'name': 'Sandwich'
 		'ingredients':['salmon', 'mayonnaise', 'celery', 'lemon zest', 'black pepper', 'lettuce leaves', 'bread'],
 		'upvotes': 31,
 		'downvotes': 8,
@@ -58,19 +62,22 @@ const recipes = {
 
     // create a recipe
  	app.post('/api/recipes', (req, res) => {
- 		const recipe = req.body.recipe;
- 		const content = req.body.content;
- 		recipes[recipe] = { ingredients: content, upvotes: 0}
+ 		recipes[req.body.name] = req.body
 	   	res.status(200).send({
 	     	message: ['recipe added successfully', recipes]
+	   	});
+ 	})
+
+ 	// get a recipe
+ 	app.get('/api/recipes/:recipeId', (req, res) => {
+	   	res.status(200).send({
+	     	message: recipes[req.params.recipeId]
 	   	});
  	})
  
  	// edit a recipe
  	app.put('/api/recipes/:recipeId', (req, res) => {
- 		const recipeToGet = req.params.recipeId
- 		const valueToUpdate = req.body.valueToUpdate
- 		recipes[recipeToGet].data = valueToUpdate
+ 		recipes[req.params.recipeId] = req.body
 	   	res.status(200).send({
 	     	message: ['recipe updated successfully', recipes]
 	   	});
